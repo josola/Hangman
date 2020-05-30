@@ -15,9 +15,19 @@ int main()
 {
     cout << "Starting a new game of hangman..." << endl;
 
+    cout << endl;
+
     int failed_attempts = 0;
     cout << "How many failed attempts do you need? [1-25] ";
     cin >> failed_attempts;
+
+    cout << endl;
     
+    int word_length = 0;
+    cout << "How many letters do you want in your word? [1-25] ";
+    cin >> word_length;
+    
+    cout << endl;
+
     return 0;
 }
