@@ -4,3 +4,8 @@
  * Written by Jordan Sola 2020
  * This program uses the MIT license.
  */
+
+int main()
+{
+    return 0;
+}
