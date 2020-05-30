@@ -26,7 +26,11 @@ int main()
     int word_length = 0;
     cout << "How many letters do you want in your word? [1-25] ";
     cin >> word_length;
-    
+
+    cout << endl;
+
+    cout << "Generating a word for you..." << endl;
+
     cout << endl;
 
     return 0;
