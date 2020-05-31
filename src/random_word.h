@@ -11,4 +11,5 @@
 using std::string;
 using std::vector;
 
+int GenerateRandomNumber(int range);
 string WordChooser(vector<string> word_container);
