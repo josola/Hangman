@@ -46,5 +46,12 @@ int main()
         }
     }
 
+    cout << "Word: ";
+    for (size_t i = 0; i < word.length(); i++)
+    {
+        cout << '#';
+    }
+    cout << endl;
+
     return 0;
 }
