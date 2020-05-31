@@ -1,15 +1,9 @@
 #include "random_word.h"
-#include <random>
-
-int GenerateRandomNumber(int range)
-{
-    srand(static_cast<unsigned int>(time(NULL)));
-    int output(rand() % range + 1);
-    return output;
-}
+#include "number_generator.h"
 
 string WordChooser(vector<string> word_container)
 {
-    string output;
+    int position = GenerateRandomNumber(word_container.size());
+    string output = word_container.at(position);
     return output;
 }

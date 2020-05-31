@@ -1,5 +1,5 @@
 /*
- * Rand Word Chooser
+ * Random Word Chooser
  * Chooses a word at random from a specified input.
  * Written by Jordan Sola 2020
  * This software uses the MIT license.
@@ -11,5 +11,4 @@
 using std::string;
 using std::vector;
 
-int GenerateRandomNumber(int range);
 string WordChooser(vector<string> word_container);
