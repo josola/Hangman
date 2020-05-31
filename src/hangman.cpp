@@ -42,7 +42,6 @@ int main()
         case 2:
         {
             word = WordChooser(AcquireFileContents("src/words/two_letter_words.txt"));
-            cout << word << endl;
             break;
         }
     }
