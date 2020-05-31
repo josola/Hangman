@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include "read_file.h"
+#include "read_file.h"
+#include "random_word.h"
 
 using std::cout;
 using std::endl;
@@ -33,6 +35,17 @@ int main()
     cout << "Generating a word for you..." << endl;
 
     cout << endl;
+
+    string word = "";
+    switch (word_length)
+    {
+        case 2:
+        {
+            word = WordChooser(AcquireFileContents("src/words/two_letter_words.txt"));
+            cout << word << endl;
+            break;
+        }
+    }
 
     return 0;
 }
