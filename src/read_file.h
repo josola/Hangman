@@ -11,4 +11,4 @@
 using std::vector;
 using std::string;
 
-vector<string> AcquireFileContents(string input_file);
+vector<string> AcquireFileContents(const string input_file);
