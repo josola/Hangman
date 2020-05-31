@@ -1,14 +1,25 @@
-/*
- * Takes file input and reads contents to a container to be processed.
- * Written by Jordan Sola 2020
- * This program uses the MIT license.
- */
-
 #include <fstream>
+#include <vector>
+#include <string>
 
 using std::fstream;
+using std::string;
+using std::vector;
 
-int main()
+vector<string> AcquireFileContents(string input_file)
 {
-    return 0;
+    fstream file;
+    vector<string> output;
+
+    file.open(input_file, fstream::in);
+    if (file.is_open())
+    {
+        string input;
+        while (getline(file, input))
+        {
+            output.push_back(input);
+        }
+        file.close();
+    }
+    return output;
 }
