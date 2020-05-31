@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+#include "read_file.h"
 
 using std::cout;
 using std::endl;
