@@ -18,6 +18,11 @@ using std::endl;
 using std::numeric_limits;
 using std::streamsize;
 
+/* 
+ * -- TO-DO --
+ * Add functionality for checking duplicat guesses
+ */
+
 int main()
 {
     cout << "Starting a new game of hangman..." << endl;
@@ -28,7 +33,7 @@ int main()
     cout << "How many failed attempts do you need? [1-25] ";
     cin >> failed_attempts;
 
-    //attempt input error handling
+    //error handling for attempt input
     int remaining_attempts = 0;
     bool correct_attempt_input = false;
     while (!correct_attempt_input)
@@ -58,7 +63,7 @@ int main()
     cout << "How many letters do you want in your word? [2-14] ";
     cin >> word_length;
 
-    //check word length
+    //error handling for word length input
     bool correct_word_input = false;
     while (!correct_word_input)
     {
@@ -86,7 +91,7 @@ int main()
 
     cout << endl;
 
-    //get word randomly from source text file
+    //get word from source text file
     string word = "";
     switch (word_length)
     {
@@ -97,7 +102,7 @@ int main()
     }
     }
 
-    //Create a holder for the '#' characters to be replaced by correct guesses.
+    //Create a holder for '#' to be replaced by correct guesses.
     vector<char> word_holder;
     for (string::size_type i = 0; i < word.size(); i++)
     {
@@ -128,7 +133,7 @@ int main()
             cout << "First guess: ";
             cin >> guess;
 
-            //error handling for guess
+            //error handling for guess input
             bool correct_guess = false;
             while (!correct_guess)
             {
@@ -144,6 +149,7 @@ int main()
                     correct_guess = true;
                 }
             }
+            //track previous guesses
             previous_guesses.push_back(guess);
         }
         else
@@ -191,7 +197,7 @@ int main()
             cout << "Next guess: ";
             cin >> guess;
 
-            //error handling for guess
+            //error handling for next guess input
             bool correct_guess = false;
             while (!correct_guess)
             {
@@ -207,6 +213,7 @@ int main()
                     correct_guess = true;
                 }
             }
+            //track previous guesses
             previous_guesses.push_back(guess);
         }
 
