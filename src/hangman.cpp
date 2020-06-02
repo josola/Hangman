@@ -90,7 +90,7 @@ int main()
                 cout << "Previous guesses: ";
                 for (size_t i = 0; i < previous_guesses.size(); i++)
                 {
-                    if (i != previous_guesses.size())
+                    if (i != previous_guesses.size() - 1)
                     {
                         cout << i << ", ";
                     }
@@ -102,6 +102,7 @@ int main()
             }
             cout << "Next guess: ";
             cin >> guess;
+            previous_guesses.push_back(guess);
         }
 
         //check guess against word
