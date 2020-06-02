@@ -114,6 +114,7 @@ int main()
     //game state
     bool game_over = false;
     bool correct = false;
+    int total_attempts = 0;
 
     //game variables
     vector<char> previous_guesses;
@@ -122,134 +123,155 @@ int main()
     //game loop
     while (!game_over)
     {
-        cout << "Word: ";
-        for (size_t i = 0; i < word_holder.size(); i++)
+        if (any_of(word_holder.begin(), word_holder.end(), [](char i) { return i == '#'; }))
         {
-            cout << word_holder[i];
-        }
-
-        cout << endl;
-
-        if (previous_guesses.empty())
-        {
-            cout << "First guess: ";
-            cin >> guess;
-
-            //error handling for guess input
-            bool correct_guess = false;
-            while (!correct_guess)
+            cout << "Word: ";
+            for (size_t i = 0; i < word_holder.size(); i++)
             {
-                if (!CheckGuessInput(guess))
-                {
-                    cout << "Invalid input!" << endl;
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    cin >> guess;
-                }
-                else
-                {
-                    correct_guess = true;
-                }
+                cout << word_holder[i];
             }
-            //track previous guesses
-            previous_guesses.push_back(guess);
-        }
-        else
-        {
-            if (remaining_attempts != failed_attempts)
-            {
-                if (remaining_attempts == 1)
-                {
-                    cout << "One failed attempt remaining!" << endl;
-                }
-                else if (remaining_attempts == 0)
-                {
-                    cout << "You ran out of attempts!" << endl;
-                    cout << "Better luck next time." << endl;
 
-                    cout << endl;
+            cout << endl;
 
-                    cout << "Game over..." << endl;
-                    return 0;
-                }
-                else
-                {
-                    cout << "Failed attempts remaining: " << remaining_attempts << endl;
-                }
-            }
-            if (previous_guesses.size() < 2)
+            if (previous_guesses.empty())
             {
-                cout << "Previous guess: " << previous_guesses[0] << endl;
-            }
-            else
-            {
-                cout << "Previous guesses: ";
-                for (size_t i = 0; i < previous_guesses.size(); i++)
+                cout << "First guess: ";
+                cin >> guess;
+
+                //error handling for guess input
+                bool correct_guess = false;
+                while (!correct_guess)
                 {
-                    if (i != previous_guesses.size() - 1)
+                    if (!CheckGuessInput(guess))
                     {
-                        cout << previous_guesses[i] << ", ";
+                        cout << "Invalid input!" << endl;
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin >> guess;
                     }
                     else
                     {
-                        cout << previous_guesses[i] << endl;
+                        correct_guess = true;
                     }
                 }
+                //track previous guesses
+                previous_guesses.push_back(guess);
             }
-            cout << "Next guess: ";
-            cin >> guess;
-
-            //error handling for next guess input
-            bool correct_guess = false;
-            while (!correct_guess)
+            else
             {
-                if (!CheckGuessInput(guess))
+                if (remaining_attempts != failed_attempts)
                 {
-                    cout << "Invalid input!" << endl;
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    cin >> guess;
+                    if (remaining_attempts == 1)
+                    {
+                        cout << "One failed attempt remaining!" << endl;
+                    }
+                    else if (remaining_attempts == 0)
+                    {
+                        cout << "You ran out of attempts!" << endl;
+                        cout << "Better luck next time." << endl;
+
+                        cout << endl;
+
+                        cout << "Game over..." << endl;
+                        return 0;
+                    }
+                    else
+                    {
+                        cout << "Failed attempts remaining: " << remaining_attempts << endl;
+                    }
                 }
-                //duplicate guess
-                else if (any_of(previous_guesses.begin(), previous_guesses.end(), [guess](char i) { return i == guess; }))
+                if (previous_guesses.size() < 2)
                 {
-                    cout << guess << " has already been guessed!" << endl;
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    cout << "Next guess: ";
-                    cin >> guess;
+                    cout << "Previous guess: " << previous_guesses[0] << endl;
                 }
                 else
                 {
-                    correct_guess = true;
+                    cout << "Previous guesses: ";
+                    for (size_t i = 0; i < previous_guesses.size(); i++)
+                    {
+                        if (i != previous_guesses.size() - 1)
+                        {
+                            cout << previous_guesses[i] << ", ";
+                        }
+                        else
+                        {
+                            cout << previous_guesses[i] << endl;
+                        }
+                    }
+                }
+                cout << "Next guess: ";
+                cin >> guess;
+
+                //error handling for guess input
+                bool correct_guess = false;
+                while (!correct_guess)
+                {
+                    if (!CheckGuessInput(guess))
+                    {
+                        cout << "Invalid input!" << endl;
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin >> guess;
+                    }
+                    //duplicate guess
+                    else if (any_of(previous_guesses.begin(), previous_guesses.end(), [guess](char i) { return i == guess; }))
+                    {
+                        cout << guess << " has already been guessed!" << endl;
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cout << "Next guess: ";
+                        cin >> guess;
+                    }
+                    else
+                    {
+                        correct_guess = true;
+                    }
+                }
+                //track previous guesses
+                previous_guesses.push_back(guess);
+            }
+
+            //check guess against word
+            for (size_t i = 0; i < word.size(); i++)
+            {
+                if (word[i] == guess)
+                {
+                    word_holder[i] = guess;
+                    correct = true;
                 }
             }
-            //track previous guesses
-            previous_guesses.push_back(guess);
-        }
 
-        //check guess against word
-        for (size_t i = 0; i < word.size(); i++)
-        {
-            if (word[i] == guess)
+            //output appropriate guess prompt
+            if (correct)
             {
-                word_holder[i] = guess;
-                correct = true;
+                correct = false;
             }
-        }
+            else
+            {
+                cout << guess << " is NOT in your word!" << endl;
+                remaining_attempts--;
+            }
+            total_attempts++;
 
-        //output appropriate guess prompt
-        if (correct)
-        {
-            correct = false;
+            cout << endl;
         }
         else
         {
-            cout << guess << " is NOT in your word!" << endl;
-            remaining_attempts--;
-        }
+            cout << "Word: ";
+            for (size_t i = 0; i < word_holder.size(); i++)
+            {
+                cout << word_holder[i];
+            }
+            cout << endl;
+            cout << "You guessed your word!" << endl;
+            cout << "Total attempts: " << total_attempts << endl;
+            cout << "Leftover failed attempts: " << remaining_attempts << endl;
 
-        cout << endl;
+            cout << endl;
+
+            cout << "Game Over." << endl;
+            return 0;
+        }
     }
     return 0;
 }
