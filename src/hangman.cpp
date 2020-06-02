@@ -7,11 +7,13 @@
 
 #include <iostream>
 #include <limits>
+#include <algorithm>
 #include "read_file.h"
 #include "read_file.h"
 #include "random_word.h"
 #include "check_utility.h"
 
+using std::any_of;
 using std::cin;
 using std::cout;
 using std::endl;
@@ -20,7 +22,7 @@ using std::streamsize;
 
 /* 
  * -- TO-DO --
- * Add functionality for checking duplicat guesses
+ * Add functionality for checking duplicate guesses
  */
 
 int main()
@@ -206,6 +208,15 @@ int main()
                     cout << "Invalid input!" << endl;
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cin >> guess;
+                }
+                //duplicate guess
+                else if (any_of(previous_guesses.begin(), previous_guesses.end(), [guess](char i) { return i == guess; }))
+                {
+                    cout << guess << " has already been guessed!" << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cout << "Next guess: ";
                     cin >> guess;
                 }
                 else
