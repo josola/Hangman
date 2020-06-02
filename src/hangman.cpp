@@ -23,6 +23,7 @@ int main()
     int failed_attempts = 0;
     cout << "How many failed attempts do you need? [1-25] ";
     cin >> failed_attempts;
+    int remaining_attempts = failed_attempts;
 
     cout << endl;
 
@@ -123,7 +124,7 @@ int main()
         else
         {
             cout << guess << " is NOT in your word!" << endl;
-            failed_attempts--;
+            remaining_attempts--;
         }
 
         cout << endl;
