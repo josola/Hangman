@@ -16,5 +16,12 @@ bool CheckIntInput(const int input)
 }
 bool CheckAttemptInput(const int input)
 {
-
+    if (input < 1 || input > 25)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
