@@ -82,6 +82,10 @@ int main()
         }
         else
         {
+            if (remaining_attempts != failed_attempts)
+            {
+                cout << "Failed attempts remaining: " << remaining_attempts << endl;
+            }
             if (previous_guesses.size() < 2)
             {
                 cout << "Previous guess: " << previous_guesses[0] << endl;
