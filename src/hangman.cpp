@@ -70,11 +70,14 @@ int main()
         {
             cout << word_holder[i];
         }
+
         cout << endl;
+
         if (previous_guesses.empty())
         {
             cout << "First guess: ";
             cin >> guess;
+            previous_guesses.push_back(guess);
         }
         else
         {
@@ -110,7 +113,7 @@ int main()
                 correct = true;
             }
         }
-        
+
         //output appropriate guess prompt
         if (correct)
         {
