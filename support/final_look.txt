@@ -1,0 +1,49 @@
+-- This is to represent how the game will look during play. --
+
+Starting a new game of Hangman...
+
+How many failed attempts do you need? [1-25] 10
+
+How many letters do you want in your word? [1-25] 5
+
+Generating a word for you...
+
+Word: #####
+First guess: a
+
+Word: a####
+Previous guess: a
+Next guess: b
+b is NOT in your word!
+
+Word: a####
+Failed attempts remaining: 9
+Previous guesses: a, b
+Next guess: b
+b has already been guessed!
+Next guess: p
+
+Word: app##
+Failed attempts remaining: 9
+previous guesses: a, b, p
+Next guess: 4
+Not a letter!
+Next guess: e
+
+Word: app#e
+One failed attempt remaining!
+Previous guesses: a, b, p, e
+Next guess: ab
+Not a single letter!
+next guess: l
+
+Word: apple
+You guessed your word!
+Total attempts: 9
+Leftover failed attempts: 6
+
+Word: a####
+You ran out of attempts!
+Better luck next time.
+
+Game Over...
