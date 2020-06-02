@@ -102,6 +102,66 @@ int main()
         word = WordChooser(AcquireFileContents("src/words/two_letter_words.txt"));
         break;
     }
+    case 3:
+    {
+        word = WordChooser(AcquireFileContents("src/words/three_letter_words.txt"));
+        break;
+    }
+    case 4:
+    {
+        word = WordChooser(AcquireFileContents("src/words/four_letter_words.txt"));
+        break;
+    }
+    case 5:
+    {
+        word = WordChooser(AcquireFileContents("src/words/five_letter_words.txt"));
+        break;
+    }
+    case 6:
+    {
+        word = WordChooser(AcquireFileContents("src/words/six_letter_words.txt"));
+        break;
+    }
+    case 7:
+    {
+        word = WordChooser(AcquireFileContents("src/words/seven_letter_words.txt"));
+        break;
+    }
+    case 8:
+    {
+        word = WordChooser(AcquireFileContents("src/words/eight_letter_words.txt"));
+        break;
+    }
+    case 9:
+    {
+        word = WordChooser(AcquireFileContents("src/words/nine_letter_words.txt"));
+        break;
+    }
+    case 10:
+    {
+        word = WordChooser(AcquireFileContents("src/words/ten_letter_words.txt"));
+        break;
+    }
+    case 11:
+    {
+        word = WordChooser(AcquireFileContents("src/words/eleven_letter_words.txt"));
+        break;
+    }
+    case 12:
+    {
+        word = WordChooser(AcquireFileContents("src/words/twelve_letter_words.txt"));
+        break;
+    }
+    case 13:
+    {
+        word = WordChooser(AcquireFileContents("src/words/thirteen_letter_words.txt"));
+        break;
+    }
+    case 14:
+    {
+        word = WordChooser(AcquireFileContents("src/words/fourteen_letter_words.txt"));
+        break;
+    }
     }
 
     //Create a holder for '#' to be replaced by correct guesses.
