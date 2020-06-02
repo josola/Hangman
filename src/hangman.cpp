@@ -123,6 +123,7 @@ int main()
         else
         {
             cout << guess << " is NOT in your word!" << endl;
+            failed_attempts--;
         }
 
         cout << endl;
