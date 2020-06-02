@@ -14,3 +14,7 @@ bool CheckIntInput(const int input)
         return true;
     }
 }
+bool CheckAttemptInput(const int input)
+{
+
+}

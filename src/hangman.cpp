@@ -9,6 +9,7 @@
 #include "read_file.h"
 #include "read_file.h"
 #include "random_word.h"
+#include "check_utility.h"
 
 using std::cin;
 using std::cout;
@@ -23,6 +24,14 @@ int main()
     int failed_attempts = 0;
     cout << "How many failed attempts do you need? [1-25] ";
     cin >> failed_attempts;
+    if (!CheckIntInput(failed_attempts))
+    {
+        cout << failed_attempts << " is not a number!" << endl;
+    }
+    else if (!CheckAttemptInput(failed_attempts)
+    {
+        cout << "Please enter a number between 1 and 25!" << endl;
+    })
     int remaining_attempts = failed_attempts;
 
     cout << endl;
