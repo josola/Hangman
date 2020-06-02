@@ -5,5 +5,4 @@
  * this software uses the MIT license.
  */
 
-bool CheckIntInput(const int input);
 bool CheckAttemptInput(const int input);

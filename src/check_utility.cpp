@@ -3,17 +3,6 @@
 
 using std::cin;
 
-bool CheckIntInput(const int input)
-{
-    if (!cin)
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
-}
 bool CheckAttemptInput(const int input)
 {
     if (input < 1 || input > 25)

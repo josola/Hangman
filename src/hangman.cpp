@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+#include <limits>
 #include "read_file.h"
 #include "read_file.h"
 #include "random_word.h"
@@ -14,6 +15,8 @@
 using std::cin;
 using std::cout;
 using std::endl;
+using std::numeric_limits;
+using std::streamsize;
 
 int main()
 {
@@ -24,15 +27,29 @@ int main()
     int failed_attempts = 0;
     cout << "How many failed attempts do you need? [1-25] ";
     cin >> failed_attempts;
-    if (!CheckIntInput(failed_attempts))
+
+    int remaining_attempts = 0;
+    bool correct_attempt_input = false;
+    while (!correct_attempt_input)
     {
-        cout << failed_attempts << " is not a number!" << endl;
+        if (!cin)
+        {
+            cout << "Invalid input!" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin >> failed_attempts;
+        }
+        else if (!CheckAttemptInput(failed_attempts))
+        {
+            cout << "Please enter a number between 1 and 25!" << endl;
+            cin >> failed_attempts;
+        }
+        else
+        {
+            remaining_attempts = failed_attempts;
+            correct_attempt_input = true;
+        }
     }
-    else if (!CheckAttemptInput(failed_attempts)
-    {
-        cout << "Please enter a number between 1 and 25!" << endl;
-    })
-    int remaining_attempts = failed_attempts;
 
     cout << endl;
 
