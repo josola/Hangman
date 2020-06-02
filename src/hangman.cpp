@@ -55,9 +55,10 @@ int main()
     cout << endl;
 
     int word_length = 0;
-    cout << "How many letters do you want in your word? [1-14] ";
+    cout << "How many letters do you want in your word? [2-14] ";
     cin >> word_length;
 
+    //check word length
     bool correct_word_input = false;
     while (!correct_word_input)
     {
@@ -126,6 +127,23 @@ int main()
         {
             cout << "First guess: ";
             cin >> guess;
+
+            //error handling for guess
+            bool correct_guess = false;
+            while (!correct_guess)
+            {
+                if (!CheckGuessInput(guess))
+                {
+                    cout << "Invalid input!" << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cin >> guess;
+                }
+                else
+                {
+                    correct_guess = true;
+                }
+            }
             previous_guesses.push_back(guess);
         }
         else
@@ -162,16 +180,33 @@ int main()
                 {
                     if (i != previous_guesses.size() - 1)
                     {
-                        cout << i << ", ";
+                        cout << previous_guesses[i] << ", ";
                     }
                     else
                     {
-                        cout << i << endl;
+                        cout << previous_guesses[i] << endl;
                     }
                 }
             }
             cout << "Next guess: ";
             cin >> guess;
+
+            //error handling for guess
+            bool correct_guess = false;
+            while (!correct_guess)
+            {
+                if (!CheckGuessInput(guess))
+                {
+                    cout << "Invalid input!" << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cin >> guess;
+                }
+                else
+                {
+                    correct_guess = true;
+                }
+            }
             previous_guesses.push_back(guess);
         }
 

@@ -7,3 +7,4 @@
 
 bool CheckAttemptInput(const int input);
 bool CheckWordLengthInput(const int input);
+bool CheckGuessInput(const char input);
