@@ -4,3 +4,5 @@
  * Written by Jordan Sola 2020
  * this software uses the MIT license.
  */
+
+bool CheckIntInput(const int input);
