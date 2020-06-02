@@ -1,2 +1,2 @@
 # Hangman
-A text based hangman game. 🎮 **CURRENTLY UNDER DEVELOPMENT**
+A text based hangman game. 🎮
