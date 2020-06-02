@@ -10,9 +10,9 @@
 #include "read_file.h"
 #include "random_word.h"
 
+using std::cin;
 using std::cout;
 using std::endl;
-using std::cin;
 
 int main()
 {
@@ -25,7 +25,7 @@ int main()
     cin >> failed_attempts;
 
     cout << endl;
-    
+
     int word_length = 0;
     cout << "How many letters do you want in your word? [1-25] ";
     cin >> word_length;
@@ -36,22 +36,77 @@ int main()
 
     cout << endl;
 
+    //get word randomly from source text file
     string word = "";
     switch (word_length)
     {
-        case 2:
+    case 2:
+    {
+        word = WordChooser(AcquireFileContents("src/words/two_letter_words.txt"));
+        break;
+    }
+    }
+
+    //Create a holder for the '#' characters to be replaced by correct guesses.
+    vector<char> word_holder;
+    for (string::size_type i = 0; i < word.size(); i++)
+    {
+        word_holder.push_back('#');
+    }
+
+    //game state
+    bool game_over = false;
+
+    //game variables
+    vector<char> previous_guesses;
+    char guess = ' ';
+
+    //game loop
+    while (!game_over)
+    {
+        cout << "Word: ";
+        for (size_t i = 0; i < word_holder.size(); i++)
         {
-            word = WordChooser(AcquireFileContents("src/words/two_letter_words.txt"));
-            break;
+            cout << word_holder[i];
+        }
+        cout << endl;
+        if (previous_guesses.empty())
+        {
+            cout << "First guess: ";
+            cin >> guess;
+        }
+        else
+        {
+            if (previous_guesses.size() < 2)
+            {
+                cout << "Previous guess: " << previous_guesses[0] << endl;
+            }
+            else
+            {
+                cout << "Previous guesses: ";
+                for (size_t i = 0; i < previous_guesses.size(); i++)
+                {
+                    if (i != previous_guesses.size())
+                    {
+                        cout << i << ", ";
+                    }
+                    else
+                    {
+                        cout << i << endl;
+                    }
+                }
+            }
+            cout << "Next guess: ";
+            cin >> guess;
+        }
+        //check guess against word
+        for (size_t i = 0; i < word.size(); i++)
+        {
+            if (word[i] == guess)
+            {
+                word_holder[i] = guess;
+            }
         }
     }
-
-    cout << "Word: ";
-    for (size_t i = 0; i < word.length(); i++)
-    {
-        cout << '#';
-    }
-    cout << endl;
-
     return 0;
 }
