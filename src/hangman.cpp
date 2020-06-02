@@ -68,10 +68,14 @@ int main()
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin >> word_length;
         }
-        else if (!check_word_length_input(word_length))
+        else if (!CheckWordLengthInput(word_length))
         {
             cout << "Please enter a number between 2 and 14!" << endl;
             cin >> word_length;
+        }
+        else
+        {
+            correct_word_input = true;
         }
     }
 

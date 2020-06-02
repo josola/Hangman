@@ -14,3 +14,15 @@ bool CheckAttemptInput(const int input)
         return true;
     }
 }
+bool CheckWordLengthInput(const int input)
+{
+    if (input < 2 || input > 14)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+    
+}
