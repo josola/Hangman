@@ -28,6 +28,7 @@ int main()
     cout << "How many failed attempts do you need? [1-25] ";
     cin >> failed_attempts;
 
+    //attempt input error handling
     int remaining_attempts = 0;
     bool correct_attempt_input = false;
     while (!correct_attempt_input)
@@ -54,8 +55,25 @@ int main()
     cout << endl;
 
     int word_length = 0;
-    cout << "How many letters do you want in your word? [1-25] ";
+    cout << "How many letters do you want in your word? [1-14] ";
     cin >> word_length;
+
+    bool correct_word_input = false;
+    while (!correct_word_input)
+    {
+        if (!cin)
+        {
+            cout << "Invalid input!" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin >> word_length;
+        }
+        else if (!check_word_length_input(word_length))
+        {
+            cout << "Please enter a number between 2 and 14!" << endl;
+            cin >> word_length;
+        }
+    }
 
     cout << endl;
 
