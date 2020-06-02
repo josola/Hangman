@@ -56,6 +56,7 @@ int main()
 
     //game state
     bool game_over = false;
+    bool correct = false;
 
     //game variables
     vector<char> previous_guesses;
@@ -99,14 +100,28 @@ int main()
             cout << "Next guess: ";
             cin >> guess;
         }
+
         //check guess against word
         for (size_t i = 0; i < word.size(); i++)
         {
             if (word[i] == guess)
             {
                 word_holder[i] = guess;
+                correct = true;
             }
         }
+        
+        //output appropriate guess prompt
+        if (correct)
+        {
+            correct = false;
+        }
+        else
+        {
+            cout << guess << " is NOT in your word!" << endl;
+        }
+
+        cout << endl;
     }
     return 0;
 }
