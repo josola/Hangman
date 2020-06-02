@@ -84,17 +84,24 @@ int main()
         {
             if (remaining_attempts != failed_attempts)
             {
-                if (remaining_attempts == 0)
+                if (remaining_attempts == 1)
+                {
+                    cout << "One failed attempt remaining!" << endl;
+                }
+                else if (remaining_attempts == 0)
                 {
                     cout << "You ran out of attempts!" << endl;
                     cout << "Better luck next time." << endl;
 
                     cout << endl;
-                    
+
                     cout << "Game over..." << endl;
                     return 0;
                 }
-                cout << "Failed attempts remaining: " << remaining_attempts << endl;
+                else
+                {
+                    cout << "Failed attempts remaining: " << remaining_attempts << endl;
+                }
             }
             if (previous_guesses.size() < 2)
             {
