@@ -15,7 +15,7 @@ A copy of a string literal that is contained within the input array.
 
 🗺️ **Include file**
 
-[src\random_word.h](src\random_word.h)
+[src\random_word.h](https://github.com/josola/Hangman/blob/75c04f846712ad5e570bb8ea8a087098c07547f1/src/random_word.h)
 
 💡 **Example**
 

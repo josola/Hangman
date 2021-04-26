@@ -15,7 +15,7 @@ Returns a ``bool``.
 
 🗺️ **Include file**
 
-[api\docs\check-attempt-input.md](api\docs\check-attempt-input.md)
+[api\docs\check-attempt-input.md](https://github.com/josola/Hangman/blob/e86b39f3e066a785dbd41c5ceeda6aef2b0ea91c/src/check_utility.h)
 
 💡 **Example**
 

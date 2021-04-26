@@ -15,7 +15,7 @@ The contents of the file path input as a vector container of separated strings.
 
 🗺️ **Include file**
 
-[src\read_file.h](src\read_file.h)
+[src\read_file.h](https://github.com/josola/Hangman/blob/2dcc1cf4feb40ea26aa204706778bf924c7561b6/src/read_file.h)
 
 💡 **Example**
 

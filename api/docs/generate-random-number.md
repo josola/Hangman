@@ -15,7 +15,7 @@ An integer literal.
 
 🗺️ **Include file**
 
-[src\number_generator.h](src\number_generator.h)
+[src\number_generator.h](https://github.com/josola/Hangman/blob/e86b39f3e066a785dbd41c5ceeda6aef2b0ea91c/src/number_generator.h)
 
 💡 **Example**
 

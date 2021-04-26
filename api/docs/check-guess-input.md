@@ -15,7 +15,7 @@ Returns a ``bool`` value.
 
 🗺️ **Include file**
 
-[src\check_utility.h](src\check_utility.h)
+[src\check_utility.h](https://github.com/josola/Hangman/blob/e86b39f3e066a785dbd41c5ceeda6aef2b0ea91c/src/check_utility.h)
 
 💡 **Example**
 
