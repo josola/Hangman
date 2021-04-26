@@ -5,6 +5,6 @@
  * this software uses the MIT license.
  */
 
-bool CheckAttemptInput(const int input);
-bool CheckWordLengthInput(const int input);
+bool CheckAttemptInput(const unsigned int input);
+bool CheckWordLengthInput(const unsigned int input);
 bool CheckGuessInput(const char input);

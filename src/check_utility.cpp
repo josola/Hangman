@@ -5,9 +5,12 @@
 using std::vector;
 using std::cin;
 
-bool CheckAttemptInput(const int input)
+bool CheckAttemptInput(const unsigned int input)
 {
-    if (input < 1 || input > 25)
+    int min = 1;
+    int max = 25;
+
+    if (input < min || input > max)
     {
         return false;
     }
@@ -16,9 +19,12 @@ bool CheckAttemptInput(const int input)
         return true;
     }
 }
-bool CheckWordLengthInput(const int input)
+bool CheckWordLengthInput(const unsigned int input)
 {
-    if (input < 2 || input > 14)
+    int min = 2;
+    int max = 14;
+
+    if (input < min || input > max)
     {
         return false;
     }

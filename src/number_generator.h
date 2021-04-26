@@ -5,4 +5,4 @@
  * This software uses the MIT license.
  */
 
-int GenerateRandomNumber(int range);
+int GenerateRandomNumber(unsigned int range);
