@@ -2,7 +2,7 @@
 
 Allows users to play Hangman.
 
-- This project has its own [API Reference](https://github.com/josola/Hangman/blob/master/api_reference.md)! Be sure to check it out, even though it is quite small.
+- This project has its own [API Reference](https://github.com/josola/Hangman/blob/d542c92fabc940a69bac1a971c15b28825fcc034/api/reference.md)! Be sure to check it out, even though it is quite small.
 
 - Contributions are always welcome. Check out the [Contributing](https://github.com/josola/Hangman/blob/master/CONTRIBUTING.md) guide for more information.
 
