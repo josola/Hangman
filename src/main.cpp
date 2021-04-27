@@ -1,8 +1,8 @@
-/*
- * Hangman
+/* src/main.cpp
  * Program that lets you play a text version of Hangman.
- * Written by Jordan Sola 2020
- * This program uses the MIT license.
+ *
+ * (c) 2021 Jordan Sola
+ * Written by Jordan Sola
  */
 
 #include <iostream>

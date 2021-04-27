@@ -1,14 +1,16 @@
-/*
- * Random Word Chooser
+/* src/random_word.h
  * Chooses a word at random from a specified input.
- * Written by Jordan Sola 2020
- * This software uses the MIT license.
+ *
+ * (c) 2021 Jordan Sola
+ * Written by Jordan Sola
  */
+
+#ifndef RANDOM_WORD_H
+#define RANDOM_WORD_H
 
 #include <string>
 #include <vector>
 
-using std::string;
-using std::vector;
+std::string WordChooser(std::vector<std::string> word_container);
 
-string WordChooser(vector<string> word_container);
+#endif // RANDOM_WORD_H

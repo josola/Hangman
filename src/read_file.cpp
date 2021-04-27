@@ -1,6 +1,13 @@
+/* src/read_file.cpp
+ * Implimentation for AcquireFileContents().
+ *
+ * (c) 2021 Jordan Sola
+ * Written by Jordan Sola
+ */
+
 #include <fstream>
-#include <vector>
-#include <string>
+
+#include "read_file.h"
 
 using std::fstream;
 using std::string;

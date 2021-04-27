@@ -1,14 +1,16 @@
-/*
- * Read File
+/* src/read_file.h
  * Takes file input and reads contents to a container to be processed.
- * Written by Jordan Sola 2020
- * This program uses the MIT license.
+ *
+ * (c) 2021 Jordan Sola
+ * Written by Jordan Sola
  */
+
+#ifndef READ_FILE_H
+#define READ_FILE_H
 
 #include <vector>
 #include <string>
 
-using std::vector;
-using std::string;
+std::vector<std::string> AcquireFileContents(const std::string input_file);
 
-vector<string> AcquireFileContents(const string input_file);
+#endif // RED_FILE_H
