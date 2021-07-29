@@ -16,6 +16,13 @@ Banners should be formatted as follows:
  */
 ```
 
+Include directives should be organized as user includes before standard library includes.
+
+```c++
+#include "user_include.h"
+#include <iostream>
+```
+
 Function names should be Capitalized(). Do not use camelCase(), lowercase_with_underscores(), ALL_CAPS(), or lowercasewithoutunderscores().
 
 ```c++
@@ -116,6 +123,18 @@ Bad:
 // file foo.h
 using namespace std;
 // ... declarations ...
+```
+
+Standard library classes should be written inline, instead of following any ``using namespace`` directives.
+
+```c++
+#include <iostream>
+
+int main()
+{
+    std::cout << "The proper way to use library classes" << std::endl;
+    return 0;
+}
 ```
 
 Use the **Standard Template Library** *STL* as often as you can. Do not rewrite STL functions when you don't have to.
