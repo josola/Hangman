@@ -1,4 +1,4 @@
-# Style Guide
+# Style Guide 🧶
 
 Contained within are a few concrete guidelines on how the look and feel of this project should be.
 
