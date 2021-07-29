@@ -13,4 +13,4 @@
 
 std::string WordChooser(std::vector<std::string> word_container);
 
-#endif // RANDOM_WORD_H
+#endif // !RANDOM_WORD_H

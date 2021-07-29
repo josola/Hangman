@@ -12,4 +12,4 @@ bool CheckAttemptInput(const unsigned int input);
 bool CheckWordLengthInput(const unsigned int input);
 bool CheckGuessInput(const char input);
 
-#endif // CHECK_UTILITY_H
+#endif // !CHECK_UTILITY_H

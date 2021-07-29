@@ -10,4 +10,4 @@
 
 int GenerateRandomNumber(unsigned int range);
 
-#endif // NUMBER_GENERATOR_H
+#endif // !NUMBER_GENERATOR_H

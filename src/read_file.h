@@ -13,4 +13,4 @@
 
 std::vector<std::string> AcquireFileContents(const std::string input_file);
 
-#endif // RED_FILE_H
+#endif // !RED_FILE_H
