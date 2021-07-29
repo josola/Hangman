@@ -94,7 +94,7 @@ int main()
     cout << endl;
 
     //get word from source text file
-    string word = "";
+    std::string word = "";
     switch (word_length)
     {
     case 2:
@@ -165,8 +165,8 @@ int main()
     }
 
     //Create a holder for '#' to be replaced by correct guesses.
-    vector<char> word_holder;
-    for (string::size_type i = 0; i < word.size(); i++)
+    std::vector<char> word_holder;
+    for (std::string::size_type i = 0; i < word.size(); i++)
     {
         word_holder.push_back('#');
     }
@@ -177,7 +177,7 @@ int main()
     int total_attempts = 0;
 
     //game variables
-    vector<char> previous_guesses;
+    std::vector<char> previous_guesses;
     char guess = ' ';
 
     //game loop
