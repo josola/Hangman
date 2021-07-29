@@ -9,19 +9,15 @@
 
 #include "read_file.h"
 
-using std::fstream;
-using std::string;
-using std::vector;
-
-vector<string> AcquireFileContents(const string input_file)
+std::vector<std::string> AcquireFileContents(const std::string input_file)
 {
-    fstream file;
-    vector<string> output;
+    std::fstream file;
+    std::vector<std::string> output;
 
-    file.open(input_file, fstream::in);
+    file.open(input_file, std::fstream::in);
     if (file.is_open())
     {
-        string input;
+        std::string input;
         while (getline(file, input))
         {
             output.push_back(input);

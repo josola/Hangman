@@ -9,9 +9,6 @@
 #include <iostream>
 #include <vector>
 
-using std::vector;
-using std::cin;
-
 bool CheckAttemptInput(const unsigned int input)
 {
     int min = 1;
@@ -42,7 +39,7 @@ bool CheckWordLengthInput(const unsigned int input)
 }
 bool CheckGuessInput(const char input)
 {
-    vector<char> bad_guesses = { '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=',
+    std::vector<char> bad_guesses = { '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=',
     ',', '.', '/', '<', '>', '?', ';', ':', '[', ']',
     '{', '}', '|', '`', '~'
     };
