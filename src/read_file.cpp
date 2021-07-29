@@ -5,9 +5,8 @@
  * Written by Jordan Sola
  */
 
-#include <fstream>
-
 #include "read_file.h"
+#include <fstream>
 
 std::vector<std::string> AcquireFileContents(const std::string input_file)
 {

@@ -5,13 +5,13 @@
  * Written by Jordan Sola
  */
 
-#include <iostream>
-#include <limits>
-#include <algorithm>
 #include "read_file.h"
 #include "read_file.h"
 #include "random_word.h"
 #include "check_utility.h"
+#include <iostream>
+#include <limits>
+#include <algorithm>
 
 /* 
  * -- TO-DO --
