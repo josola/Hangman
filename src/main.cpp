@@ -1,7 +1,7 @@
 /* src/main.cpp
  * Program that lets you play a text version of Hangman.
  *
- * (c) 2021 Jordan Sola
+ * (c) 2020 - 2021 Jordan Sola
  * Written by Jordan Sola
  */
 
