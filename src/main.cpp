@@ -13,11 +13,6 @@
 #include <limits>
 #include <algorithm>
 
-/* 
- * -- TO-DO --
- * Add functionality for checking duplicate guesses
- */
-
 int main()
 {
     std::cout << "Starting a new game of hangman..." << std::endl;
