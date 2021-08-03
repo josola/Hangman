@@ -1,140 +1,140 @@
 # Style Guide 🧶
 
-Contained within are a few concrete guidelines on how the look and feel of this project should be.
+### Project structure should be as follows:
 
-## Formatting
-
-Banners should be formatted as follows:
-
-```c++
-/* path_to_file/filename.extension
- * Description of what the file does
- * or why it needs to exist.
- *
- * (c) year and copyright holder
- * Written by author_name
- */
+```
+project
+|   .gitignore
+|   LICENSE
+|   README.md
+| 
+└───bin
+|   |   executables
+|
+└───docs
+|   |   documentation
+|
+└───src
+    |   source_files
 ```
 
-Include directives should be organized as user includes before standard library includes.
+### The main point of entry source file should be named ```main```, regardless of file type.
+
+### Banners should be formmated as follows:
 
 ```c++
-#include "user_include.h"
-#include <iostream>
+/* file_directory/file_name.extension
+ * File description.
+ * copyright
+ * author */
 ```
 
-Function names should be Capitalized(). Do not use camelCase(), lowercase_with_underscores(), ALL_CAPS(), or lowercasewithoutunderscores().
+### User ```include``` directives should be placed before library directives.
 
 ```c++
-int GetSum(int num_a, int num_b)
-{
-    ...
-}
+#include "user_file.h"
+#include <library>
 ```
 
-Block scope identifiers should be on their own lines.
+### ``using namespace`` should not be included in source files.
+
+Wrong:
 
 ```c++
-for (int num : arr)
-{
-    ...
-}
-```
+#include <vector>
 
-Add spacing within expressions, do not bunch up information that doesn't require it.
-
-Good:
-```c++
-if (1 + 1 == 2)
-{
-    ...
-}
-```
-
-Bad:
-```c++
-if(1+1==2)
-{
-    ...
-}
-```
-
-Place ``const`` to the west of your expression.
-
-```c++
-const int limit = 100;
-```
-
-Do not leave trailing line breaks at the end of source files.
-
-## Good Practices
-
-Initialize variables at their declarations.
-
-```c++
-int sum = 0;
-string name = "";
-float gpa = 0.0;
-bool found = false;
-```
-
-Always return a value at the end of your main function's execution.
-
-```c++
-int main()
-{
-    ...
-    return 0;
-}
-```
-
-Write expressive names for variables, classes, and so on. Do not use single letter variables.
-
-Good:
-```c++
-vector<int> grades = {89, 73, 92, 97};
-string first_name = "Jordan";
-char grade_mark = 'C';
-int RenameTitles(vector<string> titles);
-```
-
-Bad:
-```c++
-vector<int> arr = {89, 73, 92, 97};
-string a = "Jordan";
-char g = 'C';
-int Rename(vector<string> arr);
-```
-
-Use ``#include`` guards in header (.h) files. Do not use ``#pragma once``. It is not portable, and some compilers do not recognize it.
-
-```c++
-// file foo.h
-#ifndef FOO_H
-#define FOO_H
-// ... declarations ...
-#endif // FOO_H
-```
-
-Do not use ``using namespace std`` in a global scope within header files. It has a detrimental effective on the preprocessor's ability to properly look at the ``#include`` directives within each header file.
-
-Bad:
-```c++
-// file foo.h
 using namespace std;
-// ... declarations ...
 ```
 
-Standard library classes should be written inline, instead of following any ``using namespace`` directives.
+Wrong:
 
 ```c++
 #include <iostream>
 
+using std::cout;
+```
+
+### The ``main()`` function should have a return type.
+
+```c++
 int main()
 {
-    std::cout << "The proper way to use library classes" << std::endl;
-    return 0;
+ ...
 }
 ```
 
-Use the **Standard Template Library** *STL* as often as you can. Do not rewrite STL functions when you don't have to.
+### Curly braces should be placed on newlines.
+
+```c++
+int main()
+{
+ ...
+}
+```
+
+### Definitions should occur at declarations when possible.
+
+```c++
+int num = 12;
+const int limit = 32;
+```
+
+``const`` should be west.
+
+Right:
+
+```c++
+const int limit = 12;
+```
+
+Wrong:
+
+```c++
+int const limit = 12;
+```
+
+### Spaces should be included in expressions.
+
+Right:
+
+```c++
+while (limit != 12)
+{
+
+}
+```
+
+Wrong:
+
+```c++
+while(limit!=12)
+{
+
+}
+```
+
+### New lines to the output stream should use ``std::endl;``.
+
+```c++
+std::cout << "Hello World!" << std::endl;
+```
+
+### The ``main()`` function should return 0 at the end of execution.
+
+```c++
+int main()
+{
+ ...
+ return 0;
+}
+```
+
+### Do not include trailing newlines in source files.
+
+### Project documentation filenames should be all caps:
+
+```
+BUILD_GUIDE.md
+CONTRIBUTING.md
+README.md
+```
