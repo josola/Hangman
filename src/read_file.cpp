@@ -1,9 +1,7 @@
 /* src/read_file.cpp
  * Implimentation for AcquireFileContents().
- *
- * (c) 2021 Jordan Sola
- * Written by Jordan Sola
- */
+ * (c) 2020-2021 Jordan Sola
+ * Written by Jordan Sola */
 
 #include "read_file.h"
 #include <fstream>

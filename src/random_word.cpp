@@ -1,9 +1,7 @@
 /* src/random_word.cpp
  * Implimentation for WordChooser().
- *
- * (c) 2021 Jordan Sola
- * Written by Jordan Sola
- */
+ * (c) 2020-2021 Jordan Sola
+ * Written by Jordan Sola */
 
 #include "random_word.h"
 #include "number_generator.h"

@@ -1,9 +1,7 @@
 /* src/check_utility.cpp
  * Implimentation for checking utilities.
- *
- * (c) 2021 Jordan Sola
- * Written by Jordan Sola
- */
+ * (c) 2020-2021 Jordan Sola
+ * Written by Jordan Sola */
 
 #include "check_utility.h"
 #include <iostream>

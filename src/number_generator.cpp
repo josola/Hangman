@@ -1,9 +1,7 @@
 /* src/number_generator.cpp
  * Implimentation for GenerateRandomNumber().
- *
- * (c) 2021 Jordan Sola
- * Written by Jordan Sola
- */
+ * (c) 2020-2021 Jordan Sola
+ * Written by Jordan Sola */
 
 #include "number_generator.h"
 #include <random>
