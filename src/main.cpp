@@ -31,11 +31,12 @@ int main()
             std::cout << "Invalid input!" << std::endl;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "How many failed attempts do you need? [1-25] ";
             std::cin >> failed_attempts;
         }
         else if (!CheckAttemptInput(failed_attempts))
         {
-            std::cout << "Please enter a number between 1 and 25!" << std::endl;
+            std::cout << "Please enter a number between 1 and 25! ";
             std::cin >> failed_attempts;
         }
         else
@@ -60,11 +61,12 @@ int main()
             std::cout << "Invalid input!" << std::endl;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "How many letters do you want in your word? [2-14] ";
             std::cin >> word_length;
         }
         else if (!CheckWordLengthInput(word_length))
         {
-            std::cout << "Please enter a number between 2 and 14!" << std::endl;
+            std::cout << "Please enter a number between 2 and 14! ";
             std::cin >> word_length;
         }
         else
@@ -193,6 +195,7 @@ int main()
                         std::cout << "Invalid input!" << std::endl;
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        std::cout << "First guess: ";
                         std::cin >> guess;
                     }
                     else
@@ -257,6 +260,7 @@ int main()
                         std::cout << "Invalid input!" << std::endl;
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        std::cout << "Next guess: ";
                         std::cin >> guess;
                     }
                     //duplicate guess
