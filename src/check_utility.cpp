@@ -35,23 +35,30 @@ bool CheckWordLengthInput(const unsigned int input)
         return true;
     }
 }
-bool CheckGuessInput(const char input)
+bool CheckGuessInput(const std::string input)
 {
-    std::vector<char> bad_guesses = { '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '-', '=',
-    ',', '.', '/', '<', '>', '?', ';', ':', '[', ']',
-    '{', '}', '|', '`', '~', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+    std::vector<std::string> bad_guesses = { "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=",
+    ",", ".", "/", "<", ">", "?", ";", ":", "[", "]",
+    "{", "}", "|", "`", "~", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
     };
 
     bool output = false;
-    for (size_t i = 0; i < bad_guesses.size(); i++)
+    if (input.size() > 1)
     {
-        if (input == bad_guesses[i])
+        return output;
+    }
+    else
+    {
+        for (size_t i = 0; i < bad_guesses.size(); i++)
         {
-            return false;
-        }
-        else
-        {
-            output = true;
+            if (input == bad_guesses[i])
+            {
+                return false;
+            }
+            else
+            {
+                output = true;
+            }
         }
     }
     return output;

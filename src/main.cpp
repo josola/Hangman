@@ -10,6 +10,7 @@
 #include <iostream>
 #include <limits>
 #include <algorithm>
+#include <string>
 
 int main()
 {
@@ -165,8 +166,8 @@ int main()
     int total_attempts = 0;
 
     //game variables
-    std::vector<char> previous_guesses;
-    char guess = ' ';
+    std::vector<std::string> previous_guesses;
+    std::string guess = "";
 
     //game loop
     while (!game_over)
@@ -264,7 +265,7 @@ int main()
                         std::cin >> guess;
                     }
                     //duplicate guess
-                    else if (any_of(previous_guesses.begin(), previous_guesses.end(), [guess](char i) { return i == guess; }))
+                    else if (any_of(previous_guesses.begin(), previous_guesses.end(), [guess](std::string i) { return i == guess; }))
                     {
                         std::cout << guess << " has already been guessed!" << std::endl;
                         std::cin.clear();
@@ -284,9 +285,9 @@ int main()
             //check guess against word
             for (size_t i = 0; i < word.size(); i++)
             {
-                if (word[i] == guess)
+                if (word[i] == guess.c_str()[0])
                 {
-                    word_holder[i] = guess;
+                    word_holder[i] = guess.c_str()[0];
                     correct = true;
                 }
             }
