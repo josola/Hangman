@@ -1,14 +1,18 @@
-/* src/number_generator.cpp
+/* 
  * Implimentation for GenerateRandomNumber().
- * (c) 2020-2021 Jordan Sola
- * Written by Jordan Sola */
+ * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
+ */
 
-#include "number_generator.h"
 #include <random>
 
-int GenerateRandomNumber(unsigned int range)
-{
-    srand(static_cast<unsigned int>(time(NULL)));
-    int output(rand() % range + 1);
-    return output;
+#include "number_generator.h"
+
+int GenerateRandomNumber(unsigned int range) {
+
+	srand(static_cast<unsigned int>(time(NULL)));
+	int output(rand() % range + 1);
+	
+	return output;
+
 }

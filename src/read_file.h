@@ -1,10 +1,11 @@
 #ifndef READ_FILE_H
 #define READ_FILE_H
 
-/* src/read_file.h
+/*
  * Takes file input and reads contents to a container to be processed.
- * (c) 2020-2021 Jordan Sola
- * Written by Jordan Sola */
+ * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
+ */
 
 #include <vector>
 #include <string>

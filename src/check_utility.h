@@ -1,10 +1,11 @@
 #ifndef CHECK_UTILITY_H
 #define CHECK_UTILITY_H
 
-/* src/check_utility.h
+/*
  * Checks whatever needs checking.
- * (c) 2020-2021 Jordan Sola
- * Written by Jordan Sola */
+ * (c) 2020-2021 Jordan Sola. All rights reserved. (MIT License)
+ * Written by Jordan Sola 2020-2021
+ */
 
 #include <string>
 
