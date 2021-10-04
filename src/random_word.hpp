@@ -1,5 +1,5 @@
-#ifndef RANDOM_WORD_H
-#define RANDOM_WORD_H
+#ifndef RANDOM_WORD_HPP
+#define RANDOM_WORD_HPP
 
 /*
  * Chooses a word at random from a specified input.
@@ -12,4 +12,4 @@
 
 std::string WordChooser(std::vector<std::string> word_container);
 
-#endif // !RANDOM_WORD_H
+#endif // !RANDOM_WORD_HPP

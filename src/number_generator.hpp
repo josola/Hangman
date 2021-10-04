@@ -1,5 +1,5 @@
-#ifndef NUMBER_GENERATOR_H
-#define NUMBER_GENERATOR_H
+#ifndef NUMBER_GENERATOR_HPP
+#define NUMBER_GENERATOR_HPP
 
 /*
  * Generates a pseudo random number within a given range.
@@ -9,4 +9,4 @@
 
 int GenerateRandomNumber(unsigned int range);
 
-#endif // !NUMBER_GENERATOR_H
+#endif // !NUMBER_GENERATOR_HPP
